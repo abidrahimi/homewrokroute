@@ -14,7 +14,7 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController user = TextEditingController();
   TextEditingController pass = TextEditingController();
   List<String> users = [];
-  List<String> passwords = []; // Add passwords list
+  List<String> passwords = []; 
 
   @override
   Widget build(BuildContext context) {
@@ -33,12 +33,12 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(height: 30),
               ElevatedButton(
                 onPressed: () {
-                  // Check if both username AND password exist
+              
                   if (users.contains(user.text) && passwords.contains(pass.text)) {
                     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Account ${user.text} already exists')));
                   } else {
                     users.add(user.text);
-                    passwords.add(pass.text); // Save password too
+                    passwords.add(pass.text); 
                   }
                   Navigator.push(context, MaterialPageRoute(builder: (context) => HomeAutoPage()));
                 },
